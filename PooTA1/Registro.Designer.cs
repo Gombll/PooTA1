@@ -44,6 +44,8 @@
             Nombre = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
+            textBoxBuscar = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDatos).BeginInit();
             SuspendLayout();
             // 
@@ -116,6 +118,7 @@
             textBoxDireccion.Name = "textBoxDireccion";
             textBoxDireccion.Size = new Size(293, 23);
             textBoxDireccion.TabIndex = 7;
+            textBoxDireccion.TextChanged += textBoxDireccion_TextChanged;
             // 
             // buttonInsertar
             // 
@@ -126,7 +129,7 @@
             buttonInsertar.TabIndex = 8;
             buttonInsertar.Text = "Insertar";
             buttonInsertar.UseVisualStyleBackColor = true;
-            buttonInsertar.Click += button1_Click;
+            buttonInsertar.Click += buttonInsertar_Click;
             // 
             // buttonActualizar
             // 
@@ -137,6 +140,7 @@
             buttonActualizar.TabIndex = 9;
             buttonActualizar.Text = "Actualizar";
             buttonActualizar.UseVisualStyleBackColor = true;
+            buttonActualizar.Click += buttonActualizar_Click;
             // 
             // buttonEliminar
             // 
@@ -147,6 +151,7 @@
             buttonEliminar.TabIndex = 10;
             buttonEliminar.Text = "Eliminar";
             buttonEliminar.UseVisualStyleBackColor = true;
+            buttonEliminar.Click += buttonEliminar_Click;
             // 
             // dataGridViewDatos
             // 
@@ -158,7 +163,7 @@
             dataGridViewDatos.Name = "dataGridViewDatos";
             dataGridViewDatos.Size = new Size(669, 211);
             dataGridViewDatos.TabIndex = 11;
-            dataGridViewDatos.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewDatos.CellContentClick += dataGridViewDatos_CellContentClick;
             // 
             // DNI
             // 
@@ -180,12 +185,32 @@
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
             // 
-            // Form1
+            // textBoxBuscar
+            // 
+            textBoxBuscar.Location = new Point(423, 163);
+            textBoxBuscar.Name = "textBoxBuscar";
+            textBoxBuscar.Size = new Size(293, 23);
+            textBoxBuscar.TabIndex = 12;
+            textBoxBuscar.TextChanged += textBoxBuscar_TextChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(424, 136);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 24);
+            label5.TabIndex = 13;
+            label5.Text = "Buscar:";
+            // 
+            // Registro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(745, 450);
+            Controls.Add(label5);
+            Controls.Add(textBoxBuscar);
             Controls.Add(dataGridViewDatos);
             Controls.Add(buttonEliminar);
             Controls.Add(buttonActualizar);
@@ -198,8 +223,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Registro";
+            Text = "Registro Persona";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewDatos).EndInit();
             ResumeLayout(false);
@@ -224,5 +249,7 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Edad;
         private DataGridViewTextBoxColumn Direccion;
+        private TextBox textBoxBuscar;
+        private Label label5;
     }
 }

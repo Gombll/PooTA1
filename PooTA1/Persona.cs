@@ -9,12 +9,12 @@ namespace PooTA1
 {
     internal class Persona
     {
-        public int DNI,edad;
-        public string Nombre,Direccion;
-      
-        public Persona(int dNI, int edad, string nombre, string direccion)
+        public int DNI, edad;
+        public string Nombre, Direccion;
+
+        public Persona(int DNI, int edad, string nombre, string direccion)
         {
-            DNI = dNI;
+            this.DNI = DNI;
             this.edad = edad;
             Nombre = nombre;
             Direccion = direccion;
@@ -27,8 +27,8 @@ namespace PooTA1
         public string ruta;
 
         public JsonArchivo(string r)
-        {  
-                ruta = r; 
+        {
+            ruta = r;
         }
 
         public void Guardar()
